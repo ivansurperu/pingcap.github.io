@@ -25,11 +25,11 @@
         </div>
         <div class="section">
             <h2 id="positions" class="title">Positions</h2>
-            {{ $posts := where (where .Site.Pages "Section" "about-cn") ".Params.position" "==" true }}
+            {{ $posts := where (where .Site.Pages "Section" "community-cn") ".Params.position" "==" true }}
             <div id="positions-tabs">
                 <dt>All</dt>
                 <dd>{{- partial "recruit/positions-tab-panel.html" (dict "posts" $posts "global" .) -}}</dd>
-                {{- range $index, $toc := .Site.Data.recruit_cn_toc -}}
+                {{- range $index, $toc := .Site.Data.community_careers -}}
                     <dt class="tab-{{ $index }}">{{- .name -}}</dt>
                     <dd>{{- partial "recruit/positions-tab-panel.html" (dict "posts" $posts "name" .name "global" .) -}}</dd>
                 {{- end -}}
