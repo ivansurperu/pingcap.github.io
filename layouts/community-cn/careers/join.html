@@ -6,6 +6,7 @@
 {{- define "headTpl" -}}
     {{$.Scratch.Set "nav_active" "about"}}
     {{$.Scratch.Set "data_i18_cn" true }}
+    {{$.Scratch.Set "nav_active" "community"}}
     {{$.Scratch.Set "data_i18_link" "https://angel.co/pingcap-1/jobs" }}
     {{- partial "head/preload-css" (dict "href" "https://download.pingcap.com/style/gridtab.min.css") -}}
     {{- partial "head/preload-css" (dict "href" "/css/recruit.css") -}}
@@ -15,11 +16,12 @@
 <div class="recruit">
     <div class="container">
         <div class="section">
-            <h2 class="title">Join PingCAP</h2>
+            <h2 class="title">TiDB 社区「名企直推，人才优聘」</h2>
             <div class="desc">
-                在人才标准上，我们一向奉行精英理念，以高门槛招人，同时需要对方热爱开源，认同开源的理念，本身也在参与开源项目，能深刻认识到开源的价值。抛开具体的领域，我们认为优秀的人或多或少有一些共性的评价标准：Quick Learner, Earnest Curiosity, Faith in Open Source, Self-driven, Get Things Done.
-                <br>
-                如果你也是这样的人，马上开始 Step 1，看看有没有心仪的职位吧！
+                “不论多智能的软件，总归是「工具」，工具就是给人使用的，工具只有在人的手上才能发挥价值。另一方面，人的智慧，感情和想象力是机器无法取代的，技术做得再好，到产生价值的「最后一米」仍然需要人来完成。所谓「事在人为」，TiDB 是一件很好的工具，希望你能将它用好，帮助人们解决问题，这里面的「你」才是关键。”
+                <br/><p style="text-align: right;">——— Ed Huang</p>
+                <br/>
+                如果你：喜欢新技术，希望在分布式数据库领域实现自己的价值，TiDB 生态企业高薪职位等你来挑战！
             </div>
             {{- partial "recruit/step-timeline.html" -}}
         </div>
@@ -44,7 +46,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#positions-tabs').gridtab({
-                grid: 10,
+                grid: 12,
                 tabPadding: 12,
                 contentPadding: 0,
                 config: {
@@ -65,7 +67,7 @@
 
                 for(i = 0; i < $('dt').length; i++) {
                     let str = $('dt')[i].innerText
-                    newStr = str.replace(/\s+/g,"").replace(/\W/,"-")
+                    newStr = str.replace(/\s+/g,"")
                      newStr = "#" + newStr.toLowerCase()
 
                     if(newStr == hash) {
@@ -83,7 +85,8 @@
 
             // update hash when change tab
             $('dt').click(function() {
-                let newHash = (($(this)[0].innerText).replace(/\s+/g,"")).replace(/\W/, "-").toLowerCase()
+                let newHash = (($(this)[0].innerText).replace(/\s+/g,"")).toLowerCase()
+                console.log('new hash', newHash, ($(this)[0].innerText))
                 window.location.hash = newHash
             })
         });
