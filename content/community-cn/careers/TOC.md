@@ -2,6 +2,11 @@
 
 ## 目录
 
+
+- Paypay
+  - [Database Administrator](paypay/dba.md)
+- Square
+  - [Software Engineering Manager, Platform, Cash App](square/software-engineering-manager.md)
 - 伴鱼
   - [实时计算高级研发工程师](banyu/real-time-computing-senior-engineer.md)
   - [对象存储高级研发工程师](banyu/storage-senior-engineer.md)
